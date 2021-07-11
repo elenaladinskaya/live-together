@@ -21,6 +21,10 @@ body {
   background-size: 100px 100px;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 .container {
   position: relative;
 }
