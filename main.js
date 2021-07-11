@@ -40,6 +40,7 @@ resultBtn.addEventListener('click', e => {
 
   result.style.display = 'block';
   result.innerHTML = `
+  <a href="#" id="closeBtn" class="close-btn"></a>
   <b>План:</b> "${randomItem.id}"<br> 
   <b>Место:</b> ${randomItem.place} <br>
   <b>Я:</b> ${randomItem.me} <br>
@@ -47,5 +48,19 @@ resultBtn.addEventListener('click', e => {
   `;
 
   resultBtn.classList.add('disabled');
+  resultBtn.disabled = true;
   resultBtn.innerText = 'Результат ▼';
-}, { once: true });
+
+  const closeBtn = document.getElementById('closeBtn');
+
+  closeBtn.addEventListener('click', e => {
+    e.preventDefault();
+
+    console.log('hi');
+
+    result.style.display = 'none';
+    resultBtn.classList.remove('disabled');
+    resultBtn.innerText = 'Рандомный вариант';
+    resultBtn.disabled = false;
+  });
+});
