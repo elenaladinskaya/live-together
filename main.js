@@ -47,7 +47,7 @@ resultBtn.addEventListener('click', e => {
   <b>Ты:</b> ${randomItem.you} <br>
   `;
 
-  resultBtn.classList.add('disabled');
+  resultBtn.classList.toggle('disabled');
   resultBtn.disabled = true;
   resultBtn.innerText = 'Результат ▼';
 
@@ -56,10 +56,8 @@ resultBtn.addEventListener('click', e => {
   closeBtn.addEventListener('click', e => {
     e.preventDefault();
 
-    console.log('hi');
-
     result.style.display = 'none';
-    resultBtn.classList.remove('disabled');
+    resultBtn.classList.toggle('disabled');
     resultBtn.innerText = 'Рандомный вариант';
     resultBtn.disabled = false;
   });
