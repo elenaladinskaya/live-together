@@ -28,7 +28,7 @@ const liveTogether = [
 const resultBtn = document.getElementById('resultBtn');
 const result = document.getElementById('result');
 
-function arrayRandomIndex(array) {
+function getArrayRandomIndex(array) {
   const random = Math.floor(Math.random() * array.length);
   return random;
 }
@@ -36,7 +36,7 @@ function arrayRandomIndex(array) {
 resultBtn.addEventListener('click', e => {
   e.preventDefault();
 
-  const randomItem = liveTogether[arrayRandomIndex(liveTogether)];
+  const randomItem = liveTogether[getArrayRandomIndex(liveTogether)];
 
   result.style.display = 'block';
   result.innerHTML = `
@@ -46,6 +46,6 @@ resultBtn.addEventListener('click', e => {
   <b>Ты:</b> ${randomItem.you} <br>
   `;
 
-  resultBtn.classList.add('btn-disabled');
+  resultBtn.classList.add('disabled');
   resultBtn.innerText = 'Результат ▼';
 }, { once: true });

@@ -35,6 +35,9 @@ body {
   background-size: 100% 1.2em;
   border-radius: 10px;
   padding: 30px;
+  -webkit-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+  box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
 }
 
 button {
@@ -44,7 +47,6 @@ button {
   transform: translateX(-50%);
   font-size: 14px;
   font-weight: 500;
-  font-style: normal;
   text-transform: uppercase;
   text-decoration: none;
   cursor: pointer;
@@ -65,7 +67,7 @@ button:hover {
   background: #9d53e2;
 }
 
-button.btn-disabled {
+button.disabled {
   color: rgb(63, 63, 63);
   background-color: #fff7ef;
   cursor: auto;
