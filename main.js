@@ -1,4 +1,4 @@
-let liveTogether = [
+const liveTogether = [
   {
     id: "Б",
     place: "Воронеж, съемная квартира",
@@ -28,7 +28,7 @@ let liveTogether = [
 const resultBtn = document.getElementById('resultBtn');
 const result = document.getElementById('result');
 
-function arrayRandElem(array) {
+function arrayRandomIndex(array) {
   const random = Math.floor(Math.random() * array.length);
   return random;
 }
@@ -36,17 +36,16 @@ function arrayRandElem(array) {
 resultBtn.addEventListener('click', e => {
   e.preventDefault();
 
-  const randomIndex = liveTogether[arrayRandElem(liveTogether)];
+  const randomItem = liveTogether[arrayRandomIndex(liveTogether)];
 
   result.style.display = 'block';
   result.innerHTML = `
-  <b>План:</b> "${randomIndex.id}"<br> 
-  <b>Место:</b> ${randomIndex.place} <br>
-  <b>Я:</b> ${randomIndex.me} <br>
-  <b>Ты:</b> ${randomIndex.you} <br>
+  <b>План:</b> "${randomItem.id}"<br> 
+  <b>Место:</b> ${randomItem.place} <br>
+  <b>Я:</b> ${randomItem.me} <br>
+  <b>Ты:</b> ${randomItem.you} <br>
   `;
 
-  resultBtn.classList.add('btnDisabled');
+  resultBtn.classList.add('btn-disabled');
   resultBtn.innerText = 'Результат ▼';
 }, { once: true });
-

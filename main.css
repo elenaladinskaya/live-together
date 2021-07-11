@@ -27,7 +27,7 @@ body {
 
 .result {
   margin: auto;
-  width: 80%;
+  width: 50%;
   display: none;
   background-color: #fff7ef;
   background-image:
@@ -65,7 +65,7 @@ button:hover {
   background: #9d53e2;
 }
 
-button.btnDisabled {
+button.btn-disabled {
   color: rgb(63, 63, 63);
   background-color: #fff7ef;
   cursor: auto;
@@ -79,6 +79,7 @@ button.btnDisabled {
 
 @media screen and (max-width: 480px) {
   .result {
+    width: 80%;
     padding: 20px;
   }
 }
