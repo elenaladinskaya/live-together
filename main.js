@@ -49,16 +49,14 @@ resultBtn.addEventListener('click', e => {
 
   resultBtn.classList.toggle('disabled');
   resultBtn.disabled = true;
-  resultBtn.innerText = 'Результат ▼';
+  resultBtn.textContent = 'Результат ▼';
+});
 
-  const closeBtn = document.getElementById('closeBtn');
-
-  closeBtn.addEventListener('click', e => {
-    e.preventDefault();
-
+document.addEventListener('click', e => {
+  if (e.target.id === 'closeBtn') {
     result.style.display = 'none';
     resultBtn.classList.toggle('disabled');
-    resultBtn.innerText = 'Рандомный вариант';
+    resultBtn.textContent = 'Рандомный вариант';
     resultBtn.disabled = false;
-  });
+  }
 });
